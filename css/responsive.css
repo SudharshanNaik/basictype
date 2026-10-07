@@ -1,0 +1,282 @@
+/* ==========================================================================
+   SMILECARE DENTAL CLINIC - RESPONSIVE STYLESHEET
+   Mobile-First & Adaptive Breakpoints
+   ========================================================================== */
+
+/* --- 1. Large Tablet / Laptop Screen (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+  .hero-headline {
+    font-size: 2.75rem;
+  }
+
+  .treatments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-doctor-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* --- 2. Tablet Screen (max-width: 768px) --- */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+  }
+
+  .top-bar-item:first-child {
+    display: none; /* Hide working hours on small screens to save space */
+  }
+
+  /* Navigation Drawer for Tablet/Mobile */
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5.5rem 2rem 2rem 2rem;
+    gap: 1.25rem;
+    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.1);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-cta-group .btn-header-cta {
+    display: none; /* In header, shown inside mobile drawer */
+  }
+
+  .nav-menu .mobile-drawer-cta {
+    display: block !important;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Scrim backdrop for mobile menu */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Hero Section Stacking */
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-trust-indicator {
+    justify-content: center;
+  }
+
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+
+  .floating-badge {
+    position: static;
+    margin-top: 1rem;
+    display: inline-flex;
+    animation: none;
+  }
+
+  .floating-badge-1, .floating-badge-2 {
+    display: none; /* Hide floating badges on mobile to keep layout clean */
+  }
+
+  /* About Doctor Stacking */
+  .about-doctor-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .doctor-image-container {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .doctor-details-content {
+    max-width: 100%;
+  }
+
+  .doctor-specialties-list {
+    grid-template-columns: 1fr;
+    text-align: left;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Gallery Grid */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* Contact & Map Stacking */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Appointment Form */
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment-header-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+  }
+
+  .appointment-form {
+    padding: 1.75rem;
+  }
+}
+
+/* --- 3. Mobile Phones (max-width: 540px) --- */
+@media (max-width: 540px) {
+  .top-bar {
+    display: none; /* Maximize mobile screen real estate */
+  }
+
+  .hero-headline {
+    font-size: 2rem;
+  }
+
+  .hero-subheadline {
+    font-size: 1rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .treatments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .whatsapp-alternative-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .whatsapp-alternative-box .btn {
+    width: 100%;
+  }
+
+  .contact-quick-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-quick-buttons .btn {
+    width: 100%;
+  }
+
+  .modal-dialog {
+    max-height: 95vh;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+}
